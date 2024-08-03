@@ -59,8 +59,7 @@ windows = { version = "0.58.0", features = ["Win32_Foundation"] }
 
 ```rust
 use tao::{
-    event_loop::{EventLoop, EventLoopBuilder},
-    window::{Window, WindowAttributes, WindowBuilder},
+    event::{Event, WindowEvent}, event_loop::{ControlFlow, EventLoop, EventLoopBuilder}, window::{Window, WindowAttributes, WindowBuilder}
 };
 use wry::{WebView, WebViewAttributes, WebViewBuilder};
 
@@ -138,8 +137,8 @@ impl WebViewFrame {
 
         let mut webview_builder = WebViewBuilder::new(&main_window);
 
-        let attributes = webview.clone();
-        webview_builder.attrs = attributes;   //   mismatched types expected `WebViewAttributes found `&WebViewFrame`)
+        let attributes = &webview.webview_attrs;
+        webview_builder.attrs = attributes;   //  mismatched types expected `WebViewAttributes`, found `&WebViewAttributes`
 
         let main_webview = webview_builder.build().unwrap();
 
