@@ -1200,13 +1200,6 @@ fn main() {
 
 class PyWebViewBuilder:
     def __init__(self):
-        # Hier könnten Initialisierungen für die Klasse vorgenommen werden
-        pass
-
-    def build(self):
-        pass
-
-    def new(self):
         pass
 
     def new_as_child(self):
