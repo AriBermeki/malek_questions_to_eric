@@ -1635,4 +1635,24 @@ class PyFrame:
 
 
 
+
+# Python Example
+
+
+window = PyWindowBuilder()
+window.with_always_on_bottom()
+
+webview = PyWebViewBuilder()
+webview.with_url()
+
+
+app = PyFrame(window=window, webview=webview)
+
+
+
+
+
+if __name__ == "__main__":
+    app.run()
+
 ```
